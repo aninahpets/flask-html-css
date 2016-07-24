@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-from flask_debugtoolbar import DebugToolbarExtension
+# from flask_debugtoolbar import DebugToolbarExtension
 
 
 app = Flask(__name__)
@@ -12,7 +12,7 @@ app.secret_key = "ABC"
 def index_page():
     """Show an index page."""
 
-    return "<html><body>This is the homepage.</body></html>"
+    return redirect("/application-form")
 
     # Alternately, we could make this a Jinja template in `templates/`
     # and return that result of rendering this, like:
@@ -54,10 +54,10 @@ def application_submission():
 if __name__ == "__main__":
     # We have to set debug=True here, since it has to be True at the
     # point that we invoke the DebugToolbarExtension
-    app.debug = True
+    # app.debug = True
 
     # Use the DebugToolbar
-    DebugToolbarExtension(app)
+    # DebugToolbarExtension(app)
 
     app.run(host="0.0.0.0")
 
