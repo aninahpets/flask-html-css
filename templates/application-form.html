@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Ubermelon Careers</h3>
+<br>
+<p id="instruction-box" style="border-style: solid;">
+    Thank you for taking the time to apply to Ubermelon! Please enter your information below.
+</p>
+<br>
+<form action="/application" method="POST">
+    <label for="field-firstname">First Name:</label>
+        First Name: <input type="text" name="firstname" class="input">
+    <br>
+    <label for="field-lastname">Last Name:</label>
+        Last Name: <input type="text" name="lastname" class="input" style="font-weight: bold;">
+    <br>
+    <label for="field-salaryrequirement">Salary Requirement:</label>
+        <input type="number" name="salaryrequirement" class="input">
+    <br>
+    <label for="field-jobappliedfor">Job Applied For:</label>
+        <input type="radio" name="jobappliedfor" value="Software Engineer" class="input">Software Engineer
+        <input type="radio" name="jobappliedfor" value="QA Engineer" class="input">QA Engineer
+        <input type="radio" name="jobappliedfor" value="Product Manager" class="input">Product Manager
+    <br>
+    <input type="submit" value="Apply">
+</form>
+
+{% endblock %}
